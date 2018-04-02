@@ -50,7 +50,7 @@
             this.chkTop = new MaterialSkin.Controls.MaterialCheckBox();
             this.txtASMScriptBox = new AboControls.UserControls.NumberedRTB();
             this.chkMASMSyntax = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnDisassemble = new MaterialSkin.Controls.MaterialFlatButton();
             this.notification = new Orbis_Assembler.Notification();
             this.menuPpcCod.SuspendLayout();
             this.menuOpCode.SuspendLayout();
@@ -100,7 +100,7 @@
             this.txtOpcodeBox.Size = new System.Drawing.Size(151, 368);
             this.txtOpcodeBox.TabIndex = 2;
             this.txtOpcodeBox.Text = "";
-            this.txtOpcodeBox.TextChanged += new System.EventHandler(this.onTextChangedRemoveNonValid);
+            this.txtOpcodeBox.TextChanged += new System.EventHandler(this.onTextChangedRemoveNonHexDecimal);
             // 
             // menuOpCode
             // 
@@ -209,7 +209,7 @@
             this.txtOffsetBox.TabIndex = 7;
             this.txtOffsetBox.UseSystemPasswordChar = false;
             this.txtOffsetBox.Visible = false;
-            this.txtOffsetBox.TextChanged += new System.EventHandler(this.onTextChangedRemoveNonValid);
+            this.txtOffsetBox.TextChanged += new System.EventHandler(this.onTextChangedRemoveNonHexDecimal);
             // 
             // offsLbl
             // 
@@ -293,22 +293,22 @@
             this.chkMASMSyntax.Text = "Intel";
             this.chkMASMSyntax.UseVisualStyleBackColor = true;
             // 
-            // materialFlatButton1
+            // btnDisassemble
             // 
-            this.materialFlatButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Location = new System.Drawing.Point(302, 449);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(102, 36);
-            this.materialFlatButton1.TabIndex = 13;
-            this.materialFlatButton1.Text = "disassemble";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
-            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            this.btnDisassemble.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDisassemble.AutoSize = true;
+            this.btnDisassemble.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDisassemble.Depth = 0;
+            this.btnDisassemble.Location = new System.Drawing.Point(302, 452);
+            this.btnDisassemble.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDisassemble.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDisassemble.Name = "btnDisassemble";
+            this.btnDisassemble.Primary = false;
+            this.btnDisassemble.Size = new System.Drawing.Size(102, 36);
+            this.btnDisassemble.TabIndex = 13;
+            this.btnDisassemble.Text = "disassemble";
+            this.btnDisassemble.UseVisualStyleBackColor = true;
+            this.btnDisassemble.Click += new System.EventHandler(this.btnDisassemble_Click);
             // 
             // notification
             // 
@@ -328,7 +328,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 593);
             this.Controls.Add(this.notification);
-            this.Controls.Add(this.materialFlatButton1);
+            this.Controls.Add(this.btnDisassemble);
             this.Controls.Add(this.chkMASMSyntax);
             this.Controls.Add(this.txtASMScriptBox);
             this.Controls.Add(this.chkTop);
@@ -376,7 +376,7 @@
         private AboControls.UserControls.NumberedRTB txtASMScriptBox;
         private System.Windows.Forms.ToolStripMenuItem btnExecuteToggle;
         private MaterialSkin.Controls.MaterialCheckBox chkMASMSyntax;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private MaterialSkin.Controls.MaterialFlatButton btnDisassemble;
         private Notification notification;
         private System.Windows.Forms.ToolStripTextBox txtIp;
     }

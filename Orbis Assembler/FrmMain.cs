@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.IO;
-using System.Diagnostics;
-using System.Reflection;
 using PS4Lib;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Orbis_Assembler
 {
@@ -162,7 +157,7 @@ namespace Orbis_Assembler
             SaveData = txtASMScriptBox.RichTextBox.Text;
         }
 
-        private void materialFlatButton1_Click(object sender, EventArgs e)
+        private void btnDisassemble_Click(object sender, EventArgs e)
         {
             string code;
             Disassemble(txtOpcodeBox.Text, out code);
@@ -174,9 +169,10 @@ namespace Orbis_Assembler
             }
         }
 
-        private void onTextChangedRemoveNonValid(object sender, EventArgs e)
+        private void onTextChangedRemoveNonHexDecimal(object sender, EventArgs e)
         {
             Control currentControl = sender as Control;
+            
             currentControl.Text = Helper.OnlyHexValues(currentControl.Text);
         }
     }

@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnCompile = new MaterialSkin.Controls.MaterialFlatButton();
             this.menuPpcCod = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ppcCodeSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCodeSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.txtOpcodeBox = new System.Windows.Forms.RichTextBox();
             this.menuOpCode = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,15 +77,15 @@
             // menuPpcCod
             // 
             this.menuPpcCod.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ppcCodeSaveAs});
+            this.btnCodeSaveAs});
             this.menuPpcCod.Name = "menuPpcCod";
-            this.menuPpcCod.Size = new System.Drawing.Size(115, 26);
+            this.menuPpcCod.Size = new System.Drawing.Size(181, 48);
             // 
-            // ppcCodeSaveAs
+            // btnCodeSaveAs
             // 
-            this.ppcCodeSaveAs.Name = "ppcCodeSaveAs";
-            this.ppcCodeSaveAs.Size = new System.Drawing.Size(114, 22);
-            this.ppcCodeSaveAs.Text = "Save As";
+            this.btnCodeSaveAs.Name = "btnCodeSaveAs";
+            this.btnCodeSaveAs.Size = new System.Drawing.Size(180, 22);
+            this.btnCodeSaveAs.Text = "Save As";
             // 
             // txtOpcodeBox
             // 
@@ -185,13 +185,13 @@
             // btnConnect
             // 
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(162, 22);
+            this.btnConnect.Size = new System.Drawing.Size(180, 22);
             this.btnConnect.Text = "Connect / Attach";
             // 
             // btnExecuteToggle
             // 
             this.btnExecuteToggle.Name = "btnExecuteToggle";
-            this.btnExecuteToggle.Size = new System.Drawing.Size(162, 22);
+            this.btnExecuteToggle.Size = new System.Drawing.Size(180, 22);
             this.btnExecuteToggle.Text = "Execute To PS4";
             // 
             // txtOffsetBox
@@ -369,7 +369,7 @@
         private MaterialSkin.Controls.MaterialFlatButton btnWrite;
         private MaterialSkin.Controls.MaterialCheckBox chkTop;
         private System.Windows.Forms.ContextMenuStrip menuPpcCod;
-        private System.Windows.Forms.ToolStripMenuItem ppcCodeSaveAs;
+        private System.Windows.Forms.ToolStripMenuItem btnCodeSaveAs;
         private System.Windows.Forms.ContextMenuStrip menuOpCode;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem btncsharpCopy;

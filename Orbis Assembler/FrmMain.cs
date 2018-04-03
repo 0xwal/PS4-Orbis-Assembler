@@ -16,19 +16,20 @@ namespace Orbis_Assembler
         private const string orbis_objcopy = "orbis-objcopy.exe";
         private const string orbis_objdump = "orbis-objdump.exe";
         private const string script = "script";
+        private const string data = "data";
 
- 
+
         private string SaveData
         {
             get
             {
-                if (File.Exists(_localPath + "data"))
+                if (File.Exists(_localPath + data))
                 {
-                    return File.ReadAllText(_localPath + "data");
+                    return File.ReadAllText(_localPath + data);
                 }
-                return "";
+                return string.Empty;
             }
-            set => File.WriteAllText(_localPath + "data", value);
+            set => File.WriteAllText(_localPath + data, value);
         }
         private void Init()
         {
@@ -57,7 +58,7 @@ namespace Orbis_Assembler
             };
            
             SaveFileDialog sv = new SaveFileDialog();
-            ppcCodeSaveAs.Click += delegate
+            btnCodeSaveAs.Click += delegate
             {
                 sv.Filter = "ASM Code|*.asm";
                 sv.FileName = "ASM Code";
@@ -138,20 +139,22 @@ namespace Orbis_Assembler
         }
         private void btnCompile_Click(object sender, EventArgs e)
         {
-            Helper.SafeDelete(_localPath + script);
-            Helper.SafeDelete(_localPath + script + ".bin");
-            File.WriteAllText(_localPath + script, txtASMScriptBox.RichTextBox.Text);
+            string binaryOut = _localPath + script + ".bin";
+            string binaryIn = _localPath + script;
+            Helper.SafeDelete(binaryIn);
+            Helper.SafeDelete(binaryOut);
+            File.WriteAllText(binaryIn, txtASMScriptBox.RichTextBox.Text);
             notification.Hide();
             if (!Assemble(out string outPutCmd))
             {
                 notification.Notify(outPutCmd, Notification.Mode.Error);
                 return;
             }
-            if (!File.Exists(_localPath + script + ".bin"))
+            if (!File.Exists(binaryOut))
                 return;
             if (!ExtractBinary())
                 return;
-            byte[] outArray = File.ReadAllBytes(_localPath + "script.bin");
+            byte[] outArray = File.ReadAllBytes(binaryOut);
             notification.Notify($"Done! (Length: {outArray.Length})", Notification.Mode.Success);
             txtOpcodeBox.Text = BitConverter.ToString(outArray).Replace("-", " ");
             SaveData = txtASMScriptBox.RichTextBox.Text;

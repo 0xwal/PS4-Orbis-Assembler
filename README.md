@@ -8,5 +8,5 @@ bytecode and write it directly to game memory
 </p>
 
 # Note
-* You need to inject PS4API.BIN if you want to write to the memory
+* You need to inject __[PS4API.BIN](https://github.com/BISOON/ps4-api-server)__ if you want to write to the memory
 * No need for __SDK/GNU__ tools to be installed.
